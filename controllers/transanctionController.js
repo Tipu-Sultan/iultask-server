@@ -130,14 +130,4 @@ exports.getPieChart = async (req, res) => {
   res.status(200).json(categories);
 };
 
-exports.getCombinedData = async (req, res) => {
-  const statistics = await exports.getStatistics(req, res);
-  const barChart = await exports.getBarChart(req, res);
-  const pieChart = await exports.getPieChart(req, res);
 
-  res.status(200).json({
-    statistics,
-    barChart,
-    pieChart,
-  });
-};
